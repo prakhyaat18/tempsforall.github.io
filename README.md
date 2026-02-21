@@ -1,1 +1,0 @@
-# tempsforall.github.io
