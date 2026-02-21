@@ -1,0 +1,391 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Design Templates | Premium</title>
+    <style>
+        /* CSS: Dark, Minimalist, Unique Vibe */
+        :root {
+            --bg-color: #0a0a0a;
+            --surface-color: #1a1a1a;
+            --surface-hover: #222222;
+            --text-main: #f0f0f0;
+            --text-muted: #888888;
+            --accent: #ffffff;
+            --border: #333333;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Helvetica Neue', Arial, sans-serif;
+            scroll-behavior: smooth; /* Smooth scrolling for the auto-fill feature */
+        }
+
+        body {
+            background-color: var(--bg-color);
+            color: var(--text-main);
+            line-height: 1.6;
+            -webkit-font-smoothing: antialiased;
+        }
+
+        .container {
+            max-width: 1000px;
+            margin: 0 auto;
+            padding: 4rem 2rem;
+        }
+
+        h1, h2, h3 {
+            font-weight: 400;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+            margin-bottom: 1rem;
+        }
+
+        h1 {
+            font-size: 2.5rem;
+            border-bottom: 1px solid var(--border);
+            padding-bottom: 1rem;
+            margin-bottom: 3rem;
+        }
+
+        p {
+            color: var(--text-muted);
+            margin-bottom: 1.5rem;
+        }
+
+        /* --- NEW: Template Showcase Styling --- */
+        .templates-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 2rem;
+            margin-bottom: 5rem;
+        }
+
+        .template-card {
+            background-color: var(--surface-color);
+            border: 1px solid var(--border);
+            border-radius: 4px;
+            overflow: hidden;
+            transition: transform 0.3s ease, border-color 0.3s ease;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .template-card:hover {
+            transform: translateY(-5px);
+            border-color: var(--accent);
+        }
+
+        .template-image {
+            width: 100%;
+            height: 200px;
+            background-color: #2a2a2a; /* Placeholder color */
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--text-muted);
+            font-size: 0.9rem;
+            border-bottom: 1px solid var(--border);
+        }
+
+        .template-info {
+            padding: 1.5rem;
+            flex-grow: 1;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .template-info h3 {
+            margin-bottom: 0.5rem;
+            font-size: 1.2rem;
+        }
+
+        .template-price {
+            font-size: 1.5rem;
+            font-weight: bold;
+            color: var(--accent);
+            margin-bottom: 1rem;
+        }
+
+        .select-btn {
+            margin-top: auto;
+            background-color: transparent;
+            border: 1px solid var(--accent);
+            color: var(--accent);
+            padding: 0.8rem;
+        }
+
+        .select-btn:hover {
+            background-color: var(--accent);
+            color: var(--bg-color);
+            opacity: 1;
+        }
+
+        /* Form Styling */
+        .form-section {
+            background-color: var(--surface-color);
+            padding: 3rem;
+            border-radius: 4px;
+            border: 1px solid var(--border);
+            margin-bottom: 4rem;
+        }
+
+        .form-group {
+            margin-bottom: 1.5rem;
+        }
+
+        label {
+            display: block;
+            margin-bottom: 0.5rem;
+            font-size: 0.9rem;
+            color: var(--text-muted);
+        }
+
+        input, textarea {
+            width: 100%;
+            background-color: var(--bg-color);
+            border: 1px solid var(--border);
+            color: var(--text-main);
+            padding: 1rem;
+            font-size: 1rem;
+            outline: none;
+            transition: border-color 0.3s ease;
+        }
+
+        input:focus, textarea:focus {
+            border-color: var(--accent);
+        }
+
+        button {
+            background-color: var(--accent);
+            color: var(--bg-color);
+            border: none;
+            padding: 1rem 2rem;
+            font-size: 1rem;
+            font-weight: bold;
+            cursor: pointer;
+            width: 100%;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            transition: all 0.3s ease;
+        }
+
+        button:hover {
+            opacity: 0.8;
+        }
+
+        /* Success Message Styling */
+        #successMessage {
+            display: none;
+            text-align: center;
+            padding: 3rem;
+            border: 1px dashed var(--accent);
+        }
+
+        .order-code {
+            font-size: 3rem;
+            font-weight: bold;
+            color: var(--accent);
+            margin: 1rem 0;
+            letter-spacing: 3px;
+        }
+
+        /* About Section */
+        .about-section {
+            border-top: 1px solid var(--border);
+            padding-top: 3rem;
+        }
+
+        .contact-info {
+            display: flex;
+            gap: 2rem;
+            margin-top: 1.5rem;
+        }
+
+        .contact-item {
+            font-size: 0.9rem;
+        }
+        
+        .contact-item span {
+            color: var(--text-muted);
+            display: block;
+            margin-bottom: 0.2rem;
+        }
+
+        @media (max-width: 600px) {
+            .contact-info {
+                flex-direction: column;
+                gap: 1rem;
+            }
+            .form-section {
+                padding: 1.5rem;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <header>
+            <h1>Premium Templates</h1>
+            <p>Elevate your digital presence. Browse our collection and secure your design.</p>
+        </header>
+
+        <section class="templates-grid">
+            
+            <div class="template-card">
+                <div class="template-image">[Image Placeholder 800x600]</div>
+                <div class="template-info">
+                    <h3>Dark Nova</h3>
+                    <div class="template-price">$49</div>
+                    <p>Perfect for tech startups. Sleek, fast, and conversion-focused.</p>
+                    <button class="select-btn" onclick="selectTemplate('Dark Nova')">Select This Design</button>
+                </div>
+            </div>
+
+            <div class="template-card">
+                <div class="template-image">[Image Placeholder 800x600]</div>
+                <div class="template-info">
+                    <h3>Obsidian Portfolio</h3>
+                    <div class="template-price">$39</div>
+                    <p>A minimalist playground for photographers and designers.</p>
+                    <button class="select-btn" onclick="selectTemplate('Obsidian Portfolio')">Select This Design</button>
+                </div>
+            </div>
+
+            <div class="template-card">
+                <div class="template-image">[Image Placeholder 800x600]</div>
+                <div class="template-info">
+                    <h3>Aura Commerce</h3>
+                    <div class="template-price">$59</div>
+                    <p>An edgy, high-end e-commerce setup for boutique brands.</p>
+                    <button class="select-btn" onclick="selectTemplate('Aura Commerce')">Select This Design</button>
+                </div>
+            </div>
+
+        </section>
+
+        <section class="form-section" id="formContainer">
+            <h2>Purchase Request</h2>
+            <form id="orderForm">
+                <input type="hidden" id="hiddenOrderCode" name="OrderCode">
+
+                <div class="form-group">
+                    <label for="templateName">Template Selected</label>
+                    <input type="text" id="templateName" name="TemplateRequested" required placeholder="Choose a template above or type here...">
+                </div>
+
+                <div class="form-group">
+                    <label for="name">Full Name</label>
+                    <input type="text" id="name" name="Name" required placeholder="John Doe">
+                </div>
+
+                <div class="form-group">
+                    <label for="email">Email Address</label>
+                    <input type="email" id="email" name="Email" required placeholder="john@example.com">
+                </div>
+
+                <div class="form-group">
+                    <label for="phone">Phone Number</label>
+                    <input type="tel" id="phone" name="Phone" required placeholder="+1 234 567 8900">
+                </div>
+
+                <div class="form-group">
+                    <label for="address">Full Address</label>
+                    <textarea id="address" name="Address" rows="3" required placeholder="Street, City, Zip Code, Country"></textarea>
+                </div>
+
+                <button type="submit" id="submitBtn">Generate Order Code</button>
+            </form>
+        </section>
+
+        <section id="successMessage">
+            <h2>Request Received</h2>
+            <p>Your unique order code is:</p>
+            <div class="order-code" id="displayCode">XXXXXX</div>
+            <p style="color: #fff; font-size: 1.1rem; margin-top: 2rem;">
+                Send this order code to our WhatsApp number:<br>
+                <strong style="font-size: 1.5rem;">+91 00000 00000</strong><br> for the payment process and confirmation.
+            </p>
+        </section>
+
+        <section class="about-section">
+            <h2>About</h2>
+            <p>We craft high-end, bespoke digital templates for creators and businesses who refuse to blend in. Our designs focus on minimalism, speed, and unforgettable user experiences.</p>
+            
+            <div class="contact-info">
+                <div class="contact-item">
+                    <span>Email</span>
+                    <strong>hello@yourdomain.com</strong> </div>
+                <div class="contact-item">
+                    <span>Phone / WhatsApp</span>
+                    <strong>+91 00000 00000</strong> </div>
+            </div>
+        </section>
+    </div>
+
+    <script>
+        // NEW: Function to auto-fill the template name and scroll to the form
+        function selectTemplate(templateName) {
+            const templateInput = document.getElementById('templateName');
+            templateInput.value = templateName;
+            
+            // Highlight the input briefly to show it was updated
+            templateInput.style.borderColor = '#ffffff';
+            setTimeout(() => {
+                templateInput.style.borderColor = '#333333';
+            }, 1000);
+
+            // Scroll down to the form smoothly
+            document.getElementById('formContainer').scrollIntoView({ behavior: 'smooth' });
+        }
+
+        // Existing Form Submit Logic
+        document.getElementById('orderForm').addEventListener('submit', function(e) {
+            e.preventDefault(); 
+
+            const btn = document.getElementById('submitBtn');
+            btn.innerText = 'Processing...';
+            btn.disabled = true;
+
+            const randomNum = Math.floor(100000 + Math.random() * 900000);
+            const orderCode = 'TPL-' + randomNum;
+
+            document.getElementById('hiddenOrderCode').value = orderCode;
+
+            const formData = new FormData(this);
+            
+            // ---> IMPORTANT: Replace the URL below with your Formspree Endpoint <---
+            fetch('https://formspree.io/f/YOUR_ENDPOINT_ID_HERE', {
+                method: 'POST',
+                body: formData,
+                headers: {
+                    'Accept': 'application/json'
+                }
+            })
+            .then(response => {
+                if (response.ok) {
+                    document.getElementById('formContainer').style.display = 'none';
+                    document.querySelector('.templates-grid').style.display = 'none'; // Hide templates too for a clean success screen
+                    document.getElementById('successMessage').style.display = 'block';
+                    document.getElementById('displayCode').innerText = orderCode;
+                    
+                    window.scrollTo({ top: 0, behavior: 'smooth' });
+                } else {
+                    alert("Oops! There was a problem submitting your form.");
+                    btn.innerText = 'Generate Order Code';
+                    btn.disabled = false;
+                }
+            })
+            .catch(error => {
+                alert("Oops! There was a problem submitting your form.");
+                btn.innerText = 'Generate Order Code';
+                btn.disabled = false;
+            });
+        });
+    </script>
+</body>
+</html>
